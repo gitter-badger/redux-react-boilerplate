@@ -1,14 +1,25 @@
 const exec = require('child_process').exec
-const Log = require('log')
+const browserSync = require('browser-sync')
 const pkg = require('../package.json')
 
-const log = new Log('info')
-
-log.info(`starting server on http://localhost:${pkg.devPort}`)
-module.exports = () => {
-  exec(`cd docs && http-server -p ${pkg.devPort}`, err => {
-    if (err) {
-      throw err
-    }
-  })
+module.exports = dev => {
+  if (dev) {
+    const bs = browserSync.create()
+    bs.init({
+      server: './docs',
+      port: pkg.devPort,
+      open: false
+    })
+    bs.watch('./docs/main.css', (event, file) => {
+      if (event === 'change') {
+        bs.reload(file)
+      }
+    })
+  } else {
+    exec(`cd docs && http-server -p ${pkg.devPort}`, err => {
+      if (err) {
+        throw err
+      }
+    })
+  }
 }

@@ -1,12 +1,12 @@
-# NPM BOILERPLATE
+# REACT REDUX BOILERPLATE
 
-A modern boilerplate for npm things with wings.
+a modern boilerplate for react and redux with npm.
 
-[![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)](https://raw.githubusercontent.com/pixelass/npm-boilerplate/master/LICENSE)
-[![GitHub issues](https://img.shields.io/github/issues/pixelass/npm-boilerplate.svg?style=flat-square)](https://github.com/pixelass/npm-boilerplate/issues)
-[![Coveralls](https://img.shields.io/coveralls/pixelass/npm-boilerplate.svg?style=flat-square)](https://coveralls.io/github/pixelass/npm-boilerplate)
-[![bitHound](https://img.shields.io/bithound/code/github/pixelass/npm-boilerplate.svg?style=flat-square)](https://www.bithound.io/github/pixelass/npm-boilerplate)
-[![bitHound](https://img.shields.io/bithound/devDependencies/github/pixelass/npm-boilerplate.svg?style=flat-square)](https://www.bithound.io/github/pixelass/npm-boilerplate)
+[![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)](https://raw.githubusercontent.com/pixelass/redux-react-boilerplate/master/LICENSE)
+[![GitHub issues](https://img.shields.io/github/issues/pixelass/redux-react-boilerplate.svg?style=flat-square)](https://github.com/pixelass/redux-react-boilerplate/issues)
+[![Coveralls](https://img.shields.io/coveralls/pixelass/redux-react-boilerplate.svg?style=flat-square)](https://coveralls.io/github/pixelass/redux-react-boilerplate)
+[![bitHound](https://img.shields.io/bithound/code/github/pixelass/redux-react-boilerplate.svg?style=flat-square)](https://www.bithound.io/github/pixelass/redux-react-boilerplate)
+[![bitHound](https://img.shields.io/bithound/devDependencies/github/pixelass/redux-react-boilerplate.svg?style=flat-square)](https://www.bithound.io/github/pixelass/redux-react-boilerplate)
 
 [![Browserify](https://img.shields.io/badge/build-browserify-3c6991.svg?style=flat-square)](http://browserify.org/)
 [![Babel](https://img.shields.io/badge/babel-stage--0-f5da55.svg?style=flat-square)](http://babeljs.io/docs/plugins/preset-stage-0/)
@@ -38,16 +38,16 @@ A modern boilerplate for npm things with wings.
 <!-- tocstop -->
 
 ## Links
-* [Documentation](https://pixelass.github.io/npm-boilerplate/api/) (Example)
-* [Demo](https://pixelass.github.io/npm-boilerplate/) (Example)
+* [Documentation](https://pixelass.github.io/redux-react-boilerplate/api/) (Example)
+* [Demo](https://pixelass.github.io/redux-react-boilerplate/) (Example)
 
 ## Getting started
 
 Clone this repository and use it as a starting point.
 
 ```shell
-git clone git@github.com:pixelass/npm-boilerplate.git my-npm-module
-cd my-npm-module
+git clone git@github.com:pixelass/redux-react-boilerplate.git my-redux-react-module
+cd my-redux-react-module
 ## use yarn
 yarn
 ## or npm
@@ -57,7 +57,7 @@ yarn
 ## Reset git
 
 ```shell
-cd my-npm-module
+cd my-redux-react-module
 rm -rf .git
 git init
 ```
@@ -106,11 +106,19 @@ npm run dev
 
 ## What's included?
 
+### Libraries
+
+* [Redux](http://redux.js.org/)
+* [React](https://facebook.github.io/react/)
+* [classnames](https://github.com/JedWatson/classnames)
+
+
 ### Transforms
 
 * [Babel](http://babeljs.io/)
   * [stage 0](http://babeljs.io/docs/plugins/preset-stage-0/)
   * [es2015](http://babeljs.io/docs/plugins/preset-es2015/)
+  * [react](http://babeljs.io/docs/plugins/preset-react/)
 * [Browserify](http://browserify.org/)
 
 You can change the rules inside the `package.json` file.
@@ -125,7 +133,8 @@ You can change the rules inside the `package.json` file.
   "babel": {
     "presets": [
       "es2015",
-      "stage-0"
+      "stage-0",
+      "react"
     ]
   },
   "browserify": {
@@ -199,6 +208,7 @@ You can change the rules inside the `.bithound` file.
 ### Testing
 
 * [Ava](https://github.com/avajs/ava/)
+* [Sinon](http://sinonjs.org/)
 * [Coveralls](https://coveralls.io)
 * [tap-nyan (for some fun)](https://github.com/calvinmetcalf/tap-nyan)
 
@@ -280,17 +290,10 @@ yarn remove hopsdoc
 * [css-modulesify](https://github.com/css-modules/css-modulesify) (disabled)
 * [cssnext](http://cssnext.io/) (disabled)
 
-To enable [css-modules](https://github.com/css-modules/css-modules)
-simply install the dependency and follow the comments inside `scripts/run-build.js`
+### Livereload
 
-```shell
-yarn add css-modulesify -D
-```
+* [livereactload](https://github.com/milankinen/livereactload/)
+* [browser-sync](https://browsersync.io)
 
-To enable [cssnext](http://cssnext.io/)
-simply install the dependency and follow the comments inside `scripts/run-build.js`
 
-```shell
-yarn add postcss-cssnext -D
-```
 

@@ -1,5 +1,5 @@
 const serve = require('./serve')
 const build = require('./run-build')
 
-serve()
+serve(true)
 build(true)

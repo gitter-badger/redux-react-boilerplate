@@ -1,8 +1,15 @@
-import {hello, Foo} from '../src'
+import React from 'react'
+import {render} from 'react-dom'
+import {Provider} from 'react-redux'
+import App from '../src/containers/app'
+import configureStore from '../src/store/configure-store'
+import './main.css' // eslint-disable-line import/no-unassigned-import
 
-const foo = new Foo({baz: 'NPM'})
+const store = configureStore()
 
-const d = global.document
-const el = d.createElement('h3')
-el.innerHTML = hello(foo.baz())
-d.body.appendChild(el)
+render(
+  <Provider store={store}>
+    <App/>
+  </Provider>,
+  global.document.getElementById('mountPoint')
+)

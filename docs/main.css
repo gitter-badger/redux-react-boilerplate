@@ -1,6 +1,21 @@
 body {
   margin: 0;
-  background: #d69833;
-  color: #121212;
+  background: #100bf0;
+  color: #fff;
   font-family: sans-serif;
+}
+
+button {
+  background: #100bf0;
+  color: #fff;
+  border: 1px solid #fff;
+  border-radius: 2px;
+  font-size: 1em;
+  padding: 0.35em 0.7em;
+  cursor: pointer
+}
+
+button:hover {
+  background: #fff;
+  color: #100bf0;
 }
