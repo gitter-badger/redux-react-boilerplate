@@ -63,7 +63,6 @@
     "coveralls": "^2.11.16",
     "css-modulesify": "^0.27.1",
     "cz-conventional-changelog": "^2.0.0",
-    "enzyme": "^2.7.1",
     "errorify": "^0.3.1",
     "eslint": "^3.17.0",
     "eslint-config-xo-react": "^0.10.0",
