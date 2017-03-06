@@ -28,11 +28,11 @@ jsdomReact()
 
 test('should display count', t => {
   const {p} = setup()
+  let passed = false
   if (p.textContent.match(/^Clicked: 1 times/)) {
-    t.pass()
-  } else {
-    t.fail()
+    passed = true
   }
+  t.true(passed)
 })
 
 test('first button should call increment', t => {

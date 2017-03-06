@@ -231,11 +231,13 @@ You can change the rules inside the `.bithound` file.
 * [Ava](https://github.com/avajs/ava/)
 * [Sinon](http://sinonjs.org/)
 * [Coveralls](https://coveralls.io)
+* [nyc]()
 * [tap-nyan (for some fun)](https://github.com/calvinmetcalf/tap-nyan)
 
 You can change the rules inside the `package.json` file.
 
 * `ava`: `{<SETTINGS>}`
+* `nyc`: `{<SETTINGS>}`
 
 **defaults**
 
@@ -258,6 +260,19 @@ You can change the rules inside the `package.json` file.
       "babel-register"
     ],
     "babel": "inherit"
+  },
+  "nyc": {
+    "include": [
+      "src/**/*.js"
+    ],
+    "exclude": [
+      "src/store/**/*.js"
+    ],
+    "require": [
+      "babel-core/register"
+    ],
+    "sourceMap": false,
+    "instrument": false
   }
 }
 ```

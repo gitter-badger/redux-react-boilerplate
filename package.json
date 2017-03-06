@@ -156,5 +156,10 @@
       "ignore-styles"
     ],
     "babel": "inherit"
+  },
+  "nyc": {
+    "exclude": [
+      "src/store/**/*.js"
+    ]
   }
 }
