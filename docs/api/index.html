@@ -46,7 +46,8 @@
 
     <section class="readme">
         <article class="card"><h1>REACT REDUX BOILERPLATE</h1><p>a modern boilerplate for react and redux with npm.</p>
-<p><a href="https://raw.githubusercontent.com/pixelass/redux-react-boilerplate/master/LICENSE"><img src="https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square" alt="GitHub license"></a>
+<p><a href="https://travis-ci.org/pixelass/redux-react-boilerplate"><img src="https://img.shields.io/travis/pixelass/redux-react-boilerplate/master.svg?style=flat-square" alt="Travis branch"></a>
+<a href="https://raw.githubusercontent.com/pixelass/redux-react-boilerplate/master/LICENSE"><img src="https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square" alt="GitHub license"></a>
 <a href="https://github.com/pixelass/redux-react-boilerplate/issues"><img src="https://img.shields.io/github/issues/pixelass/redux-react-boilerplate.svg?style=flat-square" alt="GitHub issues"></a>
 <a href="https://coveralls.io/github/pixelass/redux-react-boilerplate"><img src="https://img.shields.io/coveralls/pixelass/redux-react-boilerplate.svg?style=flat-square" alt="Coveralls"></a>
 <a href="https://www.bithound.io/github/pixelass/redux-react-boilerplate"><img src="https://img.shields.io/bithound/code/github/pixelass/redux-react-boilerplate.svg?style=flat-square" alt="bitHound"></a>
@@ -54,12 +55,11 @@
 <p><a href="http://browserify.org/"><img src="https://img.shields.io/badge/build-browserify-3c6991.svg?style=flat-square" alt="Browserify"></a>
 <a href="http://babeljs.io/docs/plugins/preset-stage-0/"><img src="https://img.shields.io/badge/babel-stage--0-f5da55.svg?style=flat-square" alt="Babel"></a>
 <a href="https://github.com/sindresorhus/xo"><img src="https://img.shields.io/badge/code_style-XO-64d8c7.svg?style=flat-square" alt="code style xo"></a>
-<a href="https://github.com/conventional-changelog/standard-version"><img src="https://img.shields.io/badge/release-standard%20version-44aa44.svg?style=flat-square" alt="Standard Version"></a>
-<a href="https://github.com/avajs/ava"><img src="https://img.shields.io/badge/test-🚀_AVA-0e1d5c.svg?style=flat-square" alt="test ava"></a></p>
+<a href="https://github.com/avajs/ava"><img src="https://img.shields.io/badge/test-🚀_AVA-0e1d5c.svg?style=flat-square" alt="test ava"></a>
+<a href="https://github.com/css-modules/css-modulesify"><img src="https://img.shields.io/badge/css-modules-44aa44.svg?style=flat-square" alt="CSS modules"></a>
+<a href="https://github.com/conventional-changelog/standard-version"><img src="https://img.shields.io/badge/release-standard%20version-44aa44.svg?style=flat-square" alt="Standard Version"></a></p>
 <p><a href="https://yarnpkg.com/"><img src="https://img.shields.io/badge/yarn-friendly-2c8ebb.svg?style=flat-square" alt="yarn"></a>
-<a href="http://commitizen.github.io/cz-cli/"><img src="https://img.shields.io/badge/commitizen-friendly-44aa44.svg?style=flat-square" alt="Commitizen friendly"></a>
-<a href="https://github.com/css-modules/css-modulesify"><img src="https://img.shields.io/badge/css--modules-ready-aa4444.svg?style=flat-square" alt="CSS modules"></a>
-<a href="http://cssnext.io/"><img src="https://img.shields.io/badge/css--next-ready-aa4444.svg?style=flat-square" alt="CSS next"></a></p>
+<a href="http://commitizen.github.io/cz-cli/"><img src="https://img.shields.io/badge/commitizen-friendly-44aa44.svg?style=flat-square" alt="Commitizen friendly"></a></p>
 <!-- toc -->
 <ul>
 <li><a href="#links">Links</a></li>
@@ -71,12 +71,14 @@
 </ul>
 </li>
 <li><a href="#whats-included">What's included?</a><ul>
+<li><a href="#libraries">Libraries</a></li>
 <li><a href="#transforms">Transforms</a></li>
 <li><a href="#coding-style">Coding style</a></li>
 <li><a href="#code-quality">Code quality</a></li>
 <li><a href="#testing">Testing</a></li>
 <li><a href="#documentation">Documentation</a></li>
-<li><a href="#css-optional">CSS (optional)</a></li>
+<li><a href="#css">CSS</a></li>
+<li><a href="#livereload">Livereload</a></li>
 </ul>
 </li>
 </ul>
@@ -128,14 +130,34 @@ Then simple run the init script to update the original <code>package.json</code>
 <li><code>babel</code>: <code>{&lt;SETTINGS&gt;}</code></li>
 <li><code>browserify</code>: <code>{&lt;SETTINGS&gt;}</code></li>
 </ul>
-<p><strong>defaults</strong></p>
+<p><strong>defaults</strong> (development settings needed for livereload)</p>
 <pre class="prettyprint source lang-json"><code>{
   &quot;babel&quot;: {
     &quot;presets&quot;: [
       &quot;es2015&quot;,
       &quot;stage-0&quot;,
       &quot;react&quot;
-    ]
+    ],
+    &quot;env&quot;: {
+      &quot;development&quot;: {
+        &quot;sourceMaps&quot;: &quot;inline&quot;,
+        &quot;plugins&quot;: [
+          [
+            &quot;react-transform&quot;,
+            {
+              &quot;transforms&quot;: [
+                {
+                  &quot;transform&quot;: &quot;livereactload/babel-transform&quot;,
+                  &quot;imports&quot;: [
+                    &quot;react&quot;
+                  ]
+                }
+              ]
+            }
+          ]
+        ]
+      }
+    }
   },
   &quot;browserify&quot;: {
     &quot;transform&quot;: [
@@ -192,11 +214,13 @@ Then simple run the init script to update the original <code>package.json</code>
 <li><a href="https://github.com/avajs/ava/">Ava</a></li>
 <li><a href="http://sinonjs.org/">Sinon</a></li>
 <li><a href="https://coveralls.io">Coveralls</a></li>
+<li><a href="">nyc</a></li>
 <li><a href="https://github.com/calvinmetcalf/tap-nyan">tap-nyan (for some fun)</a></li>
 </ul>
 <p>You can change the rules inside the <code>package.json</code> file.</p>
 <ul>
 <li><code>ava</code>: <code>{&lt;SETTINGS&gt;}</code></li>
+<li><code>nyc</code>: <code>{&lt;SETTINGS&gt;}</code></li>
 </ul>
 <p><strong>defaults</strong></p>
 <pre class="prettyprint source lang-json"><code>{
@@ -217,6 +241,11 @@ Then simple run the init script to update the original <code>package.json</code>
       &quot;babel-register&quot;
     ],
     &quot;babel&quot;: &quot;inherit&quot;
+  },
+  &quot;nyc&quot;: {
+    &quot;exclude&quot;: [
+      &quot;src/store/**/*.js&quot;
+    ]
   }
 }</code></pre><h3>Documentation</h3><ul>
 <li><a href="http://usejsdoc.org/">jsdoc</a></li>
@@ -250,9 +279,9 @@ Then simple run the init script to update the original <code>package.json</code>
   }
 }</code></pre><p>Hopsdoc is a fully responsive theme that allows custom themes.
 You can simply remove it and load a different theme.</p>
-<pre class="prettyprint source lang-shell"><code>yarn remove hopsdoc</code></pre><h3>CSS (optional)</h3><ul>
-<li><a href="https://github.com/css-modules/css-modulesify">css-modulesify</a> (disabled)</li>
-<li><a href="http://cssnext.io/">cssnext</a> (disabled)</li>
+<pre class="prettyprint source lang-shell"><code>yarn remove hopsdoc</code></pre><h3>CSS</h3><ul>
+<li><a href="https://github.com/css-modules/css-modulesify">css-modulesify</a></li>
+<li><a href="http://cssnext.io/">cssnext</a></li>
 </ul>
 <h3>Livereload</h3><ul>
 <li><a href="https://github.com/milankinen/livereactload/">livereactload</a></li>
@@ -270,7 +299,7 @@ You can simply remove it and load a different theme.</p>
 
 
 <footer class="main-footer">
-    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.3</a> on Sun Mar 05 2017 23:17:37 GMT+0100 (CET)
+    Documentation generated by <a href="https://github.com/jsdoc3/jsdoc">JSDoc 3.4.3</a> on Mon Mar 06 2017 13:42:45 GMT+0100 (CET)
 </footer>
 
 <script>prettyPrint();</script>

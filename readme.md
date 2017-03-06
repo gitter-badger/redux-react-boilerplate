@@ -263,17 +263,9 @@ You can change the rules inside the `package.json` file.
     "babel": "inherit"
   },
   "nyc": {
-    "include": [
-      "src/**/*.js"
-    ],
     "exclude": [
       "src/store/**/*.js"
-    ],
-    "require": [
-      "babel-core/register"
-    ],
-    "sourceMap": false,
-    "instrument": false
+    ]
   }
 }
 ```
