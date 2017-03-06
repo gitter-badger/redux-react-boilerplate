@@ -16,6 +16,7 @@ test('decrement should create decrement action', t => {
 
 test('incrementIfOdd should create increment action', t => {
   const fn = actions.incrementIfOdd()
+  /* istanbul ignore if */
   if (typeof fn !== 'function') {
     t.fail()
   }
@@ -35,6 +36,7 @@ test('incrementIfOdd shouldnt create increment action if counter is even', t => 
 
 test('incrementAsync', t => {
   const fn = actions.incrementAsync(1)
+  /* istanbul ignore if */
   if (typeof fn !== 'function') {
     t.fail()
   }

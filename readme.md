@@ -2,6 +2,7 @@
 
 a modern boilerplate for react and redux with npm.
 
+[![Travis branch](https://img.shields.io/travis/pixelass/redux-react-boilerplate/master.svg?style=flat-square)](https://travis-ci.org/pixelass/redux-react-boilerplate)
 [![GitHub license](https://img.shields.io/badge/license-MIT-blue.svg?style=flat-square)](https://raw.githubusercontent.com/pixelass/redux-react-boilerplate/master/LICENSE)
 [![GitHub issues](https://img.shields.io/github/issues/pixelass/redux-react-boilerplate.svg?style=flat-square)](https://github.com/pixelass/redux-react-boilerplate/issues)
 [![Coveralls](https://img.shields.io/coveralls/pixelass/redux-react-boilerplate.svg?style=flat-square)](https://coveralls.io/github/pixelass/redux-react-boilerplate)
@@ -11,12 +12,12 @@ a modern boilerplate for react and redux with npm.
 [![Browserify](https://img.shields.io/badge/build-browserify-3c6991.svg?style=flat-square)](http://browserify.org/)
 [![Babel](https://img.shields.io/badge/babel-stage--0-f5da55.svg?style=flat-square)](http://babeljs.io/docs/plugins/preset-stage-0/)
 [![code style xo](https://img.shields.io/badge/code_style-XO-64d8c7.svg?style=flat-square)](https://github.com/sindresorhus/xo)
-[![Standard Version](https://img.shields.io/badge/release-standard%20version-44aa44.svg?style=flat-square)](https://github.com/conventional-changelog/standard-version)
 [![test ava](https://img.shields.io/badge/test-🚀_AVA-0e1d5c.svg?style=flat-square)](https://github.com/avajs/ava)
+[![CSS modules](https://img.shields.io/badge/css-modules-44aa44.svg?style=flat-square)](https://github.com/css-modules/css-modulesify)
+[![Standard Version](https://img.shields.io/badge/release-standard%20version-44aa44.svg?style=flat-square)](https://github.com/conventional-changelog/standard-version)
 
 [![yarn](https://img.shields.io/badge/yarn-friendly-2c8ebb.svg?style=flat-square)](https://yarnpkg.com/)
 [![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-44aa44.svg?style=flat-square)](http://commitizen.github.io/cz-cli/)
-[![CSS modules](https://img.shields.io/badge/css-modules-44aa44.svg?style=flat-square)](https://github.com/css-modules/css-modulesify)
 
 <!-- toc -->
 
