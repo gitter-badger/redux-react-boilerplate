@@ -16,8 +16,7 @@ a modern boilerplate for react and redux with npm.
 
 [![yarn](https://img.shields.io/badge/yarn-friendly-2c8ebb.svg?style=flat-square)](https://yarnpkg.com/)
 [![Commitizen friendly](https://img.shields.io/badge/commitizen-friendly-44aa44.svg?style=flat-square)](http://commitizen.github.io/cz-cli/)
-[![CSS modules](https://img.shields.io/badge/css--modules-ready-aa4444.svg?style=flat-square)](https://github.com/css-modules/css-modulesify)
-[![CSS next](https://img.shields.io/badge/css--next-ready-aa4444.svg?style=flat-square)](http://cssnext.io/)
+[![CSS modules](https://img.shields.io/badge/css-modules-44aa44.svg?style=flat-square)](https://github.com/css-modules/css-modulesify)
 
 <!-- toc -->
 
@@ -28,12 +27,14 @@ a modern boilerplate for react and redux with npm.
 - [Developing](#developing)
   * [Examples](#examples)
 - [What's included?](#whats-included)
+  * [Libraries](#libraries)
   * [Transforms](#transforms)
   * [Coding style](#coding-style)
   * [Code quality](#code-quality)
   * [Testing](#testing)
   * [Documentation](#documentation)
-  * [CSS (optional)](#css-optional)
+  * [CSS](#css)
+  * [Livereload](#livereload)
 
 <!-- tocstop -->
 
@@ -126,7 +127,7 @@ You can change the rules inside the `package.json` file.
 * `babel`: `{<SETTINGS>}`
 * `browserify`: `{<SETTINGS>}`
 
-**defaults**
+**defaults** (development settings needed for livereload)
 
 ```json
 {
@@ -135,7 +136,27 @@ You can change the rules inside the `package.json` file.
       "es2015",
       "stage-0",
       "react"
-    ]
+    ],
+    "env": {
+      "development": {
+        "sourceMaps": "inline",
+        "plugins": [
+          [
+            "react-transform",
+            {
+              "transforms": [
+                {
+                  "transform": "livereactload/babel-transform",
+                  "imports": [
+                    "react"
+                  ]
+                }
+              ]
+            }
+          ]
+        ]
+      }
+    }
   },
   "browserify": {
     "transform": [
@@ -285,15 +306,12 @@ You can simply remove it and load a different theme.
 yarn remove hopsdoc
 ```
 
-### CSS (optional)
+### CSS
 
-* [css-modulesify](https://github.com/css-modules/css-modulesify) (disabled)
-* [cssnext](http://cssnext.io/) (disabled)
+* [css-modulesify](https://github.com/css-modules/css-modulesify)
+* [cssnext](http://cssnext.io/)
 
 ### Livereload
 
 * [livereactload](https://github.com/milankinen/livereactload/)
 * [browser-sync](https://browsersync.io)
-
-
-
