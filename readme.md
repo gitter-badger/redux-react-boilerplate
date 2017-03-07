@@ -1,5 +1,7 @@
 # REACT REDUX BOILERPLATE
 
+[![Join the chat at https://gitter.im/redux-react-boilerplate/Lobby](https://badges.gitter.im/redux-react-boilerplate/Lobby.svg)](https://gitter.im/redux-react-boilerplate/Lobby?utm_source=badge&utm_medium=badge&utm_campaign=pr-badge&utm_content=badge)
+
 a modern boilerplate for react and redux with npm.
 
 [![Travis branch](https://img.shields.io/travis/pixelass/redux-react-boilerplate/master.svg?style=flat-square)](https://travis-ci.org/pixelass/redux-react-boilerplate)
